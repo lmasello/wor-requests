@@ -1,6 +1,6 @@
-# frozen_string_literal: true
 RSpec.shared_context 'STUB: github_repositories', shared_context: :metadata do
   before do
-    stub_request(:get, /.*repositories.*/)
+    stub_request(:get, /.*repos.*/)
+      .to_return(status: 200, body: { repos: %w[repo1 repo2] }.to_json, headers: {})
   end
 end

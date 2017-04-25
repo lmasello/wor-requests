@@ -5,7 +5,6 @@ require 'logger'
 
 class GithubService < Wor::Requests::Base
   def repositories(username)
-    byebug
     get(
       attempting_to: "get repositories of #{username}",
       path: "/users/#{username}/repos"
